@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const registationController = require("./controllers/registationController");
 const allUserController = require("./controllers/allUserController");
 const deleteUserController = require("./controllers/deleteUserController");
+const editUserController = require("./controllers/editUserController");
 // port
 const Port = 8000;
 
@@ -15,7 +16,7 @@ app.use(express.json());
 // mongodb+srv://node:KJqN8I4knLohC1ym@cluster0.fgcaw38.mongodb.net/?appName=Cluster0
 mongoose
   .connect(
-    "mongodb+srv://node:KJqN8I4knLohC1ym@cluster0.fgcaw38.mongodb.net/?appName=Cluster0",
+    "mongodb+srv://mnode2602:aS4TIySQKG5MnCh3@cluster0.fgcaw38.mongodb.net/?appName=Cluster0",
   )
   .then(() => {
     console.log("connected to db");
@@ -29,6 +30,7 @@ app.post("/registation", registationController);
 
 app.get("/allusers", allUserController);
 
+app.post("/editUser/:id",editUserController);
 app.delete("/delete/:id", deleteUserController);
 
 app.listen(Port, () => {
