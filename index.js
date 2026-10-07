@@ -6,7 +6,9 @@ const registationController = require("./controllers/registationController");
 const allUserController = require("./controllers/allUserController");
 const deleteUserController = require("./controllers/deleteUserController");
 const editUserController = require("./controllers/editUserController");
+
 // port
+
 const Port = 8000;
 
 // middlewares
